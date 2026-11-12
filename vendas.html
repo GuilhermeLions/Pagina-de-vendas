@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendas - O Boticário</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendas.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+      <h2 class="logo">oBoticário</h2>
+
+      <nav class="menu">
+        <a href="#">🏠 Home</a>
+        <a href="#">👥 Clientes</a>
+        <a href="#" class="ativo">🛒 Vendas</a>
+        <a href="#">💰 Financeiro</a>
+        <a href="#">📦 Inventário</a>
+      </nav>
+
+      <p class="frase">Beleza é<br>se sentir bem.</p>
+    </aside>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main class="conteudo">
+
+      <!-- barra do topo -->
+      <header class="topo">
+        <input type="text" id="busca" placeholder="🔍 Buscar nas últimas vendas...">
+        <div class="usuario">
+          <span>🔔</span>
+          <span>👤 Olá, Administrador</span>
+        </div>
+      </header>
+
+      <!-- título da página -->
+      <div class="titulo-pagina">
+        <div>
+          <h1>Vendas</h1>
+          <p>Registre novas vendas e acompanhe o histórico.</p>
+        </div>
+        <button id="btn-nova-venda" class="botao">+ Nova venda</button>
+      </div>
+
+      <!-- cards de resumo -->
+      <section class="resumo">
+        <div class="card-resumo">
+          <span class="icone">🛒</span>
+          <strong id="total-vendas">48</strong>
+          <span class="rotulo">Vendas no mês</span>
+          <small class="variacao">▲ 8%</small>
+        </div>
+
+        <div class="card-resumo">
+          <span class="icone">💰</span>
+          <strong id="faturamento">R$ 4.315,20</strong>
+          <span class="rotulo">Faturamento do mês</span>
+          <small class="variacao">▲ 15%</small>
+        </div>
+
+        <div class="card-resumo">
+          <span class="icone">🧾</span>
+          <strong id="ticket-medio">R$ 89,90</strong>
+          <span class="rotulo">Ticket médio</span>
+          <small class="variacao">▲ 6%</small>
+        </div>
+      </section>
+
+      <!-- formulário + carrinho lado a lado -->
+      <div class="venda">
+
+        <section class="painel">
+          <h2>Registrar venda</h2>
+
+          <form id="form-venda">
+            <div class="campo">
+              <label for="cliente">Cliente</label>
+              <select id="cliente" required>
+                <option value="">Selecione um cliente</option>
+                <option>Mariana Silva</option>
+                <option>João Santos</option>
+                <option>Ana Costa</option>
+                <option>Lucas Oliveira</option>
+                <option>Fernanda Lima</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="produto">Produto</label>
+              <!-- o value de cada produto é o preço dele -->
+              <select id="produto" required>
+                <option value="">Selecione um produto</option>
+                <option value="189.90">Floratta Des. Colônia</option>
+                <option value="159.90">Malbec Des. Colônia</option>
+                <option value="129.90">Nativa SPA Ameixa</option>
+                <option value="59.90">Hidratante Corporal</option>
+                <option value="139.90">Egeo Dolce</option>
+              </select>
+            </div>
+
+            <div class="linha-quantidade">
+              <div class="campo campo-quantidade">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" min="1" value="1">
+              </div>
+              <button type="submit" class="botao">Adicionar ao carrinho</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="painel carrinho">
+          <h2>Carrinho</h2>
+
+          <!-- os itens são criados pelo JavaScript -->
+          <ul id="lista-carrinho"></ul>
+
+          <div class="total">
+            <span>Total:</span>
+            <strong id="total-carrinho">R$ 0,00</strong>
+          </div>
+
+          <button id="btn-finalizar" class="botao botao-largo">Finalizar venda</button>
+        </section>
+
+      </div>
+
+      <!-- tabela de últimas vendas -->
+      <section class="painel">
+        <div class="cabecalho-painel">
+          <h2>Últimas vendas</h2>
+          <a href="#">Ver todas</a>
+        </div>
+
+        <div class="tabela-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Cliente</th>
+                <th>Produto(s)</th>
+                <th>Valor</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-vendas">
+              <tr>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="vendas.js"></script>
+</body>
+</html>
