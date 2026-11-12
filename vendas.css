@@ -131,7 +131,7 @@ button, input, select {
   background-color: #17493a;
 }
 
-.botao-largo {
+.botaolargo {
   width: 100%;
 }
 
@@ -163,10 +163,6 @@ button, input, select {
 
 .rotulo {
   color: #6e7b74;
-}
-
-.variacao {
-  color: #2e7d5e;
 }
 
 /* FORMULÁRIO E CARRINHO lado a lado */
